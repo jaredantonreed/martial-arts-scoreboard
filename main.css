@@ -531,3 +531,18 @@ section.scoreboard-area .penalty-red p {
 }
 
 /* SOFTWARE BUTTONS FOR FUNCTIONALITY */
+
+section.scoreboard-area .settings-icon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: normal;
+}
+
+section.scoreboard-area .settings-icon .fa-gear {
+    color: #FFFFFF;
+    font-size: 40px;
+    margin-top: 35px;
+}
