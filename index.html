@@ -12,69 +12,76 @@
 
 <body>
     <section class="scoreboard-area">
-        <div class="container-fluid">
-            <!-- ROUND NUMBER -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <p></p>
-                </div>
-            </div>
+        <div class="container">
             <!-- COUNTRY FLAGS & TIMER CLOCK -->
             <div class="row">
-                <div class="col-lg-4"></div>
-                <div class="col-lg-4"></div>
-                <div class="col-lg-4"></div>
-            </div>
-            <!-- NAMES (RED & BLUE) -->
-            <div class="row">
-                <div class="col-lg-6"></div>
-                <div class="col-lg-6"></div>
-            </div>
-            <!-- AREA FOR POINTS TO BE ACCOUNTED TO -->
-            <div class="row">
-                <div class="col-lg-6"></div>
-                <div class="col-lg-6"></div>
-            </div>
-            <!-- BUTTONS FOR RED & BLUE (BODY, HEAD, TECHNICAL AND SINGLE POINT REDUCTION) -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="col-lg-2">
-                        <p>Body Reg</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Body Turn</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Head Reg</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Head Turn</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Tech</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>GJ</p>
+                <div class="col-lg-4 current-country-flag-blue"><img
+                        src="./images/1200px-Flag_of_the_United_States.svg.png">
+                    <div class="current-name-blue">
+                        <p>Blue</p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="col-lg-2">
-                        <p>Body Reg</p>
+                <div class="col-lg-4 current-timer-and-rounds">
+                    <p class="timer">0:00</p>
+                    <p class="rounds">Round 1</p>
+                </div>
+                <div class="col-lg-4 current-country-flag-red"><img
+                        src="./images/1200px-Flag_of_the_United_States.svg.png">
+                    <div class="current-name-red">
+                        <p>Red</p>
                     </div>
-                    <div class="col-lg-2">
-                        <p>Body Turn</p>
+                </div>
+            </div>
+
+            <!-- AREA FOR POINTS TO BE ACCOUNTED TO -->
+            <div class="row scores">
+                <div class="col-lg-6 current-score-blue">
+                    <p>0</p>
+                </div>
+                <div class="col-lg-6 current-score-red">
+                    <p>0</p>
+                </div>
+            </div>
+            <!-- BUTTONS FOR BLUE & RED (BODY, HEAD, TECHNICAL AND SINGLE POINT REDUCTION) -->
+            <div class="row">
+                <div class="col-lg-6 buttons-blue">
+                    <div class="col-lg-2 body-regular-kick-blue">
+                        <p>Body Reg +2</p>
                     </div>
-                    <div class="col-lg-2">
-                        <p>Head Reg</p>
+                    <div class="col-lg-2 body-turning-kick-blue">
+                        <p>Body Turn +4</p>
                     </div>
-                    <div class="col-lg-2">
-                        <p>Head Turn</p>
+                    <div class="col-lg-2 head-regular-kick-blue">
+                        <p>Head Reg +3</p>
                     </div>
-                    <div class="col-lg-2">
-                        <p>Tech</p>
+                    <div class="col-lg-2 head-turning-kick-blue">
+                        <p>Head Turn +5</p>
                     </div>
-                    <div class="col-lg-2">
-                        <p>GJ</p>
+                    <div class="col-lg-2 technical-point-blue">
+                        <p>Tech +1</p>
+                    </div>
+                    <div class="col-lg-2 penalty-blue">
+                        <p>GJ -1</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 buttons-red">
+                    <div class="col-lg-2 body-regular-kick-red">
+                        <p>Body Reg +2</p>
+                    </div>
+                    <div class="col-lg-2 body-turning-kick-red">
+                        <p>Body Turn +4</p>
+                    </div>
+                    <div class="col-lg-2 head-regular-kick-red">
+                        <p>Head Reg +3</p>
+                    </div>
+                    <div class="col-lg-2 head-turning-kick-red">
+                        <p>Head Turn +5</p>
+                    </div>
+                    <div class="col-lg-2 technical-point-red">
+                        <p>Tech +1</p>
+                    </div>
+                    <div class="col-lg-2 penalty-red">
+                        <p>GJ -1</p>
                     </div>
                 </div>
             </div>
