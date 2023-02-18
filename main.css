@@ -151,6 +151,14 @@ section.scoreboard-area .buttons-blue {
   padding-left: 0;
 }
 
+section.scoreboard-area .buttons-blue:hover {
+  cursor: pointer;
+}
+
+section.scoreboard-area .buttons-red:hover {
+  cursor: pointer;
+}
+
 section.scoreboard-area .buttons-red {
   display: flex;
   flex-direction: row;
