@@ -1,123 +1,166 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Martial Arts Scoreboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
+  <body>
     <section class="scoreboard-area">
-        <div class="container">
-            <!-- COUNTRY FLAGS & TIMER CLOCK -->
-            <div class="row">
-                <div class="col-lg-4 current-country-flag-blue"><img
-                        src="./images/1200px-Flag_of_the_United_States.svg.png">
-                    <div class="current-name-blue">
-                        <p>Blue</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 current-timer-and-rounds">
-                    <p class="timer">0:00</p>
-                    <p class="rounds">Round 1</p>
-                </div>
-                <div class="col-lg-4 current-country-flag-red"><img
-                        src="./images/1200px-Flag_of_the_United_States.svg.png">
-                    <div class="current-name-red">
-                        <p>Red</p>
-                    </div>
-                </div>
+      <div class="container">
+        <!-- COUNTRY FLAGS & TIMER CLOCK -->
+        <div class="row">
+          <div class="col-lg-6 current-country-flag-blue">
+            <img src="./images/1200px-Flag_of_the_United_States.svg.png" />
+            <div class="current-name-blue">
+              <p>Blue</p>
             </div>
-            <!-- AREA FOR POINTS TO BE ACCOUNTED TO -->
-            <div class="row scores">
-                <div class="col-lg-6 current-score-blue">
-                    <p>0</p>
-                </div>
-                <div class="col-lg-6 current-score-red">
-                    <p>0</p>
-                </div>
+          </div>
+          <div class="col-lg-6 current-country-flag-red">
+            <img src="./images/1200px-Flag_of_the_United_States.svg.png" />
+            <div class="current-name-red">
+              <p>Red</p>
             </div>
-            <!-- BUTTONS FOR BLUE & RED (BODY, HEAD, TECHNICAL AND SINGLE POINT REDUCTION) -->
-            <div class="row">
-                <div class="col-lg-5 buttons-blue">
-                    <div class="col-lg-2 body-regular-kick-blue">
-                        <p>Body Reg +2</p>
-                    </div>
-                    <div class="col-lg-2 body-turning-kick-blue">
-                        <p>Body Turn +4</p>
-                    </div>
-                    <div class="col-lg-2 head-regular-kick-blue">
-                        <p>Head Reg +3</p>
-                    </div>
-                    <div class="col-lg-2 head-turning-kick-blue">
-                        <p>Head Turn +5</p>
-                    </div>
-                    <div class="col-lg-2 technical-point-blue">
-                        <p>Tech +1</p>
-                    </div>
-                    <div class="col-lg-2 penalty-blue">
-                        <p>GJ -1</p>
-                    </div>
-                </div>
-                <div class="col-lg-2 settings-icon">
-                    <i class="fa-solid fa-gear" id="myBtn"></i>
-                </div>
-                <div class="col-lg-5 buttons-red">
-                    <div class="col-lg-2 body-regular-kick-red">
-                        <p>Body Reg +2</p>
-                    </div>
-                    <div class="col-lg-2 body-turning-kick-red">
-                        <p>Body Turn +4</p>
-                    </div>
-                    <div class="col-lg-2 head-regular-kick-red">
-                        <p>Head Reg +3</p>
-                    </div>
-                    <div class="col-lg-2 head-turning-kick-red">
-                        <p>Head Turn +5</p>
-                    </div>
-                    <div class="col-lg-2 technical-point-red">
-                        <p>Tech +1</p>
-                    </div>
-                    <div class="col-lg-2 penalty-red">
-                        <p>GJ -1</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row start-and-stop-time-buttons">
-                <div class="col-lg-6 start-time">
-                    <p>Start Time</p>
-                </div>
-                <div class="col-lg-6 stop-time">
-                    <p>Stop Time</p>
-                </div>
-            </div>
-            <div id="myModal" class="modal">
-                <button class="close">&times;</button>
-                <h1>Settings</h1>
-                <br>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>Change Time</p>
-                        <p>Change Round Number</p>
-                        <p>Change Blue Name</p>
-                        <p>Change Red Name</p>
-                        <p>Reset System</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <!-- AREA FOR POINTS TO BE ACCOUNTED TO -->
+        <div class="row scores">
+          <div class="col-lg-5 current-score-blue">
+            <p>0</p>
+          </div>
+          <div class="col-lg-2 current-timer-and-rounds">
+            <p class="timer">0:00</p>
+            <p class="rounds">Round 1</p>
+          </div>
+          <div class="col-lg-5 current-score-red">
+            <p>0</p>
+          </div>
+        </div>
+        <!-- BUTTONS FOR BLUE & RED (BODY, HEAD, TECHNICAL AND SINGLE POINT REDUCTION) -->
+        <div class="row">
+          <div class="col-lg-5 buttons-blue">
+            <div class="col-lg-2 body-regular-kick-blue">
+              <p>Body +2</p>
+            </div>
+            <div class="col-lg-2 body-turning-kick-blue">
+              <p>Body +4</p>
+            </div>
+            <div class="col-lg-2 head-regular-kick-blue">
+              <p>Head +3</p>
+            </div>
+            <div class="col-lg-2 head-turning-kick-blue">
+              <p>Head +5</p>
+            </div>
+            <div class="col-lg-2 technical-point-blue">
+              <p>Tech +1</p>
+            </div>
+            <div class="col-lg-2 penalty-blue">
+              <p>GJ -1</p>
+            </div>
+          </div>
+          <div class="col-lg-2 settings-icon">
+            <i class="fa-solid fa-gear" id="myBtn"></i>
+          </div>
+          <div class="col-lg-5 buttons-red">
+            <div class="col-lg-2 body-regular-kick-red">
+              <p>Body +2</p>
+            </div>
+            <div class="col-lg-2 body-turning-kick-red">
+              <p>Body +4</p>
+            </div>
+            <div class="col-lg-2 head-regular-kick-red">
+              <p>Head +3</p>
+            </div>
+            <div class="col-lg-2 head-turning-kick-red">
+              <p>Head +5</p>
+            </div>
+            <div class="col-lg-2 technical-point-red">
+              <p>Tech +1</p>
+            </div>
+            <div class="col-lg-2 penalty-red">
+              <p>GJ -1</p>
+            </div>
+          </div>
+        </div>
+        <div class="row start-and-stop-time-buttons">
+          <div class="col-lg-6 start-time">
+            <p>Start Time</p>
+          </div>
+          <div class="col-lg-6 stop-time">
+            <p>Stop Time</p>
+          </div>
+        </div>
+        <div class="row">
+          <div id="myModal" class="modal">
+            <button class="close">&times;</button>
+            <h1>Settings</h1>
+            <br />
+            <div class="row">
+              <div class="col-lg-12">
+                <label>Change Time</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="time-clock-input"
+                  placeholder="0:00"
+                  pattern="[0-9]+"
+                />
+                <label>Change Round Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="round-number-input"
+                  placeholder="0:00"
+                  pattern="[0-9]+"
+                />
+                <label>Change Blue Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="blue-name-input"
+                  placeholder="John Doe"
+                />
+                <label>Change Red Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="red-name-input"
+                  placeholder="John Doe"
+                />
+              </div>
+            </div>
+            <div class="buttons-modal">
+              <button type="button" class="btn btn-secondary">
+                Reset System
+              </button>
+              <button type="button" class="btn btn-success">
+                Save Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
     <script src="scripts.js"></script>
-</body>
-
+  </body>
 </html>
