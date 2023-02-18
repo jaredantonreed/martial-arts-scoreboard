@@ -3,6 +3,8 @@
 const modal = document.querySelector("#myModal");
 const btn = document.querySelector("#myBtn");
 const span = document.querySelector(".close");
+let redFighter = document.querySelector(".red-name");
+let blueFighter = document.querySelector(".blue-name");
 let totalScoreBlue = 0;
 let totalScoreRed = 0;
 
