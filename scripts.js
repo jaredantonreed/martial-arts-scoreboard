@@ -99,3 +99,45 @@ document.querySelector(".penalty-red").addEventListener("click", function () {
   totalScoreBlue = totalScoreBlue + 1;
   document.querySelector(".score-blue").textContent = totalScoreBlue;
 });
+
+// ROUNDS
+document
+  .querySelector("#blue-name-input")
+  .addEventListener("click", function () {
+    const blueFighter = prompt("What is the name of the blue fighter?");
+    if (blueFighter === null) {
+      document.querySelector(".blue-name").textContent = "Blue";
+    } else {
+      document.querySelector(".blue-name").textContent = blueFighter;
+    }
+  });
+document
+  .querySelector("#red-name-input")
+  .addEventListener("click", function () {
+    const redFighter = prompt("What is the name of the red fighter?");
+    if (redFighter === null) {
+      document.querySelector(".red-name").textContent = "Red";
+    } else {
+      document.querySelector(".red-name").textContent = redFighter;
+    }
+  });
+
+// ROUNDS
+document
+  .querySelector("#change-round-number")
+  .addEventListener("click", function () {
+    let roundNumber = prompt("Enter a number between 1 and 3.");
+    roundNumber = Number(roundNumber);
+
+    if (roundNumber === null) {
+      document.querySelector(".round-number").textContent = "1";
+    } else if (isNaN(roundNumber)) {
+      alert(
+        "Your entry is not a number. Please enter a number between 1 and 3."
+      );
+    } else if (roundNumber >= 4) {
+      alert("Please enter a number between 1 and 3.");
+    } else {
+      document.querySelector(".round-number").textContent = roundNumber;
+    }
+  });

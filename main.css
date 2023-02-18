@@ -41,6 +41,7 @@ section.scoreboard-area .current-country-flag-red {
   padding-right: 0;
 }
 
+/* NAMES */
 section.scoreboard-area .current-name-blue p {
   font-size: 50px;
   color: #ffffff;
@@ -702,12 +703,6 @@ section.scoreboard-area .settings-icon .fa-gear {
 #myBtn:hover {
   cursor: pointer;
 }
-label {
-  margin-bottom: 3px;
-}
-input {
-  margin-bottom: 15px;
-}
 
 section.scoreboard-area .buttons-modal {
   display: flex;
@@ -725,4 +720,29 @@ section.scoreboard-area .buttons-modal {
 .btn.btn-success {
   background-color: #28a745 !important;
   border-color: #28a745 !important;
+}
+
+section.scoreboard-area p#adjust-time:hover {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+section.scoreboard-area p#change-round-number:hover {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+section.scoreboard-area p#blue-name-input:hover {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+section.scoreboard-area p#red-name-input:hover {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+section.scoreboard-area p#reset-system:hover {
+  cursor: pointer;
+  font-weight: 500;
 }
