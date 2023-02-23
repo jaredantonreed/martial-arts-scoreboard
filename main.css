@@ -78,6 +78,13 @@ section.scoreboard-area .current-timer-and-rounds p.rounds {
   margin-top: -25px;
 }
 
+.start-time:hover {
+  cursor: pointer;
+}
+.stop-time:hover {
+  cursor: pointer;
+}
+
 /* SCORES */
 section.scoreboard-area .scores {
   display: flex;

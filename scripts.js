@@ -5,8 +5,11 @@ const btn = document.querySelector("#myBtn");
 const span = document.querySelector(".close");
 let redFighter = document.querySelector(".red-name");
 let blueFighter = document.querySelector(".blue-name");
+let stopBtn = document.querySelector("#stopTime");
+let startBtn = document.querySelector("#startTime");
 let totalScoreBlue = 0;
 let totalScoreRed = 0;
+var interval;
 
 // MODAL FUNCTIONALITY
 btn.onclick = function () {
@@ -61,8 +64,8 @@ document
     document.querySelector(".score-blue").textContent = totalScoreBlue;
   });
 document.querySelector(".penalty-blue").addEventListener("click", function () {
-  totalScoreRed = totalScoreRed + 1;
-  document.querySelector(".score-red").textContent = totalScoreRed;
+  totalScoreBlue = totalScoreBlue - 1;
+  document.querySelector(".score-blue").textContent = totalScoreBlue;
 });
 
 // RED SCORE
@@ -98,11 +101,11 @@ document
     document.querySelector(".score-red").textContent = totalScoreRed;
   });
 document.querySelector(".penalty-red").addEventListener("click", function () {
-  totalScoreBlue = totalScoreBlue + 1;
-  document.querySelector(".score-blue").textContent = totalScoreBlue;
+  totalScoreRed = totalScoreRed - 1;
+  document.querySelector(".score-red").textContent = totalScoreRed;
 });
 
-// ROUNDS
+// NAME OF THE FIGHTER
 document
   .querySelector("#blue-name-input")
   .addEventListener("click", function () {
@@ -143,3 +146,43 @@ document
       document.querySelector(".round-number").textContent = roundNumber;
     }
   });
+
+// START AND STOP THE TIME
+
+function countdown() {
+  clearInterval(interval);
+  interval = setInterval(function () {
+    var timer = $(".time-clock").html();
+    timer = timer.split(":");
+    var minutes = timer[0];
+    var seconds = timer[1];
+    seconds -= 1;
+    if (minutes < 0) return;
+    else if (seconds < 0 && minutes != 0) {
+      minutes -= 1;
+      seconds = 59;
+    } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
+
+    $(".time-clock").html(minutes + ":" + seconds);
+
+    if (minutes == 0 && seconds == 0) clearInterval(interval);
+  }, 1000);
+}
+
+function stopCounter() {
+  clearInterval(interval);
+}
+
+document.querySelector("#startTime").addEventListener("click", countdown);
+
+document.querySelector("#stopTime").addEventListener("click", stopCounter);
+
+document.querySelector("#adjust-time").addEventListener("click", function () {
+  let adjustedTimer = prompt("What is the adjusted time?", "0:00");
+  adjustedTimer = adjustedTimer;
+  document.querySelector("#timer").textContent = adjustedTimer;
+  if (adjustedTimer === null || adjustedTimer === "0:00") {
+    alert("Please input an adjusted time");
+    prompt("What is the adjusted time?", "0:00");
+  }
+});
