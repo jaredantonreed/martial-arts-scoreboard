@@ -30,30 +30,30 @@ document.addEventListener("keydown", function (event) {
 // SCOREBOARD FUNCTIONALITY
 // BLUE SCORE
 document.querySelector(".score-blue").textContent = totalScoreBlue;
-document
-  .querySelector(".body-regular-kick-blue")
-  .addEventListener("click", function () {
-    totalScoreBlue = totalScoreBlue + 2;
-    document.querySelector(".score-blue").textContent = totalScoreBlue;
-  });
-document
-  .querySelector(".body-turning-kick-blue")
-  .addEventListener("click", function () {
-    totalScoreBlue = totalScoreBlue + 4;
-    document.querySelector(".score-blue").textContent = totalScoreBlue;
-  });
-document
-  .querySelector(".head-regular-kick-blue")
-  .addEventListener("click", function () {
-    totalScoreBlue = totalScoreBlue + 3;
-    document.querySelector(".score-blue").textContent = totalScoreBlue;
-  });
-document
-  .querySelector(".head-turning-kick-blue")
-  .addEventListener("click", function () {
-    totalScoreBlue = totalScoreBlue + 5;
-    document.querySelector(".score-blue").textContent = totalScoreBlue;
-  });
+// document
+//   .querySelector(".body-regular-kick-blue")
+//   .addEventListener("click", function () {
+//     totalScoreBlue = totalScoreBlue + 2;
+//     document.querySelector(".score-blue").textContent = totalScoreBlue;
+//   });
+// document
+//   .querySelector(".body-turning-kick-blue")
+//   .addEventListener("click", function () {
+//     totalScoreBlue = totalScoreBlue + 4;
+//     document.querySelector(".score-blue").textContent = totalScoreBlue;
+//   });
+// document
+//   .querySelector(".head-regular-kick-blue")
+//   .addEventListener("click", function () {
+//     totalScoreBlue = totalScoreBlue + 3;
+//     document.querySelector(".score-blue").textContent = totalScoreBlue;
+//   });
+// document
+//   .querySelector(".head-turning-kick-blue")
+//   .addEventListener("click", function () {
+//     totalScoreBlue = totalScoreBlue + 5;
+//     document.querySelector(".score-blue").textContent = totalScoreBlue;
+//   });
 document
   .querySelector(".technical-point-blue")
   .addEventListener("click", function () {
@@ -67,30 +67,30 @@ document.querySelector(".penalty-blue").addEventListener("click", function () {
 
 // RED SCORE
 document.querySelector(".score-red").textContent = totalScoreRed;
-document
-  .querySelector(".body-regular-kick-red")
-  .addEventListener("click", function () {
-    totalScoreRed = totalScoreRed + 2;
-    document.querySelector(".score-red").textContent = totalScoreRed;
-  });
-document
-  .querySelector(".body-turning-kick-red")
-  .addEventListener("click", function () {
-    totalScoreRed = totalScoreRed + 4;
-    document.querySelector(".score-red").textContent = totalScoreRed;
-  });
-document
-  .querySelector(".head-regular-kick-red")
-  .addEventListener("click", function () {
-    totalScoreRed = totalScoreRed + 3;
-    document.querySelector(".score-red").textContent = totalScoreRed;
-  });
-document
-  .querySelector(".head-turning-kick-red")
-  .addEventListener("click", function () {
-    totalScoreRed = totalScoreRed + 5;
-    document.querySelector(".score-red").textContent = totalScoreRed;
-  });
+// document
+//   .querySelector(".body-regular-kick-red")
+//   .addEventListener("click", function () {
+//     totalScoreRed = totalScoreRed + 2;
+//     document.querySelector(".score-red").textContent = totalScoreRed;
+//   });
+// document
+//   .querySelector(".body-turning-kick-red")
+//   .addEventListener("click", function () {
+//     totalScoreRed = totalScoreRed + 4;
+//     document.querySelector(".score-red").textContent = totalScoreRed;
+//   });
+// document
+//   .querySelector(".head-regular-kick-red")
+//   .addEventListener("click", function () {
+//     totalScoreRed = totalScoreRed + 3;
+//     document.querySelector(".score-red").textContent = totalScoreRed;
+//   });
+// document
+//   .querySelector(".head-turning-kick-red")
+//   .addEventListener("click", function () {
+//     totalScoreRed = totalScoreRed + 5;
+//     document.querySelector(".score-red").textContent = totalScoreRed;
+//   });
 document
   .querySelector(".technical-point-red")
   .addEventListener("click", function () {
