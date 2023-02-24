@@ -10,6 +10,8 @@ let startBtn = document.querySelector("#startTime");
 let totalScoreBlue = 0;
 let totalScoreRed = 0;
 var interval;
+var audioBuzzer = document.getElementById("myAudio");
+let roundNumber = 1;
 
 // MODAL FUNCTIONALITY
 btn.onclick = function () {
@@ -127,27 +129,11 @@ document
     }
   });
 
-// ROUNDS
-document
-  .querySelector("#change-round-number")
-  .addEventListener("click", function () {
-    let roundNumber = prompt("Enter a number between 1 and 3.");
-    roundNumber = Number(roundNumber);
+// START AND STOP THE TIME AND COLORS
 
-    if (roundNumber === null) {
-      document.querySelector(".round-number").textContent = "1";
-    } else if (isNaN(roundNumber)) {
-      alert(
-        "Your entry is not a number. Please enter a number between 1 and 3."
-      );
-    } else if (roundNumber >= 4) {
-      alert("Please enter a number between 1 and 3.");
-    } else {
-      document.querySelector(".round-number").textContent = roundNumber;
-    }
-  });
-
-// START AND STOP THE TIME
+function playAudio() {
+  audioBuzzer.play();
+}
 
 function countdown() {
   clearInterval(interval);
@@ -165,7 +151,13 @@ function countdown() {
 
     $(".time-clock").html(minutes + ":" + seconds);
 
-    if (minutes == 0 && seconds == 0) clearInterval(interval);
+    if (minutes == 0 && seconds == 0) {
+      clearInterval(interval);
+      document.querySelector("#timer").style.color = "#FF0000";
+      playAudio();
+      roundNumber = roundNumber + 1;
+      document.querySelector(".round-number").textContent = roundNumber;
+    }
   }, 1000);
 }
 
@@ -186,3 +178,23 @@ document.querySelector("#adjust-time").addEventListener("click", function () {
     prompt("What is the adjusted time?", "0:00");
   }
 });
+
+// ROUNDS
+document
+  .querySelector("#change-round-number")
+  .addEventListener("click", function () {
+    let roundNumber = prompt("Enter a number between 1 and 3.");
+    roundNumber = Number(roundNumber);
+
+    if (roundNumber === null) {
+      document.querySelector(".round-number").textContent = "1";
+    } else if (isNaN(roundNumber)) {
+      alert(
+        "Your entry is not a number. Please enter a number between 1 and 3."
+      );
+    } else if (roundNumber >= 4) {
+      alert("Please enter a number between 1 and 3.");
+    } else {
+      document.querySelector(".round-number").textContent = roundNumber;
+    }
+  });
