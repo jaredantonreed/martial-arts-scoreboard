@@ -39,7 +39,7 @@ section.scoreboard-area .current-country-flag-red {
   justify-content: flex-end;
   align-items: flex-end;
   align-content: stretch;
-  /* padding-right: 0; */
+  padding-right: 0;
 }
 
 /* NAMES */
@@ -147,6 +147,7 @@ section.scoreboard-area .current-score-blue p {
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   text-align: center;
+  margin-bottom: 0;
 }
 
 section.scoreboard-area .current-score-red p {
@@ -154,6 +155,7 @@ section.scoreboard-area .current-score-red p {
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   text-align: center;
+  margin-bottom: 0;
 }
 
 /* BUTTONS */
@@ -696,169 +698,4 @@ section.scoreboard-area p#red-name-input:hover {
 section.scoreboard-area p#reset-system:hover {
   cursor: pointer;
   font-weight: 500;
-}
-
-/* MEDIA QUERIES */
-
-@media all and (orientation: landscape) {
-  @media only screen and (max-width: 992px) {
-    html {
-      overflow-x: hidden;
-      overflow-y: hidden;
-    }
-    .container {
-      padding: 0;
-      margin: 0;
-    }
-    section.scoreboard-area .current-country-flag-blue {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
-    section.scoreboard-area .current-country-flag-red {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
-    section.scoreboard-area .current-score-red {
-      width: 200px;
-    }
-    section.scoreboard-area .current-score-blue {
-      width: 200px;
-    }
-    section.scoreboard-area .current-score-red p {
-      font-size: 100px;
-      margin-bottom: 0;
-    }
-    section.scoreboard-area .current-score-blue p {
-      font-size: 100px;
-      margin-bottom: 0;
-    }
-    section.scoreboard-area .current-timer-and-rounds {
-      width: 250px;
-    }
-    section.scoreboard-area .current-timer-and-rounds p.timer {
-      font-size: 45px;
-    }
-    section.scoreboard-area .current-timer-and-rounds p.time-clock-break {
-      font-size: 25px;
-    }
-    section.scoreboard-area .current-timer-and-rounds p.rounds {
-      font-size: 25px;
-    }
-    section.scoreboard-area .current-name-red p {
-      font-size: 25px;
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
-    section.scoreboard-area .current-name-blue p {
-      font-size: 25px;
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
-
-    section.scoreboard-area .element-width-blue {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: flex-start;
-      align-content: center;
-      width: 204px;
-    }
-
-    section.scoreboard-area .element-width-red {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: flex-end;
-      align-content: center;
-      width: 218px;
-    }
-    section.scoreboard-area {
-      height: 100vh;
-    }
-    section.scoreboard-area .buttons-red {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      align-content: normal;
-    }
-    section.scoreboard-area .buttons-red {
-      margin-top: 0;
-      padding-top: 17px;
-    }
-    section.scoreboard-area .technical-point-red p {
-      font-size: 15px;
-    }
-    section.scoreboard-area .penalty-red p {
-      font-size: 15px;
-    }
-    section.scoreboard-area .buttons-blue {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      align-content: normal;
-    }
-    section.scoreboard-area .buttons-blue {
-      margin-top: 0;
-      padding-top: 17px;
-    }
-    section.scoreboard-area .technical-point-blue p {
-      font-size: 15px;
-    }
-    section.scoreboard-area .penalty-blue p {
-      font-size: 15px;
-    }
-    section.scoreboard-area .penalty-red {
-      margin-right: -7px;
-    }
-    section.scoreboard-area .technical-point-blue {
-      margin-left: -11px;
-    }
-
-    .fa-arrow-up-long {
-      font-size: 16px;
-    }
-    .fa-arrow-down-long {
-      font-size: 16px;
-    }
-    section.scoreboard-area img {
-      width: 60px;
-    }
-    section.scoreboard-area .settings-icon .fa-gear {
-      margin-top: 0;
-      font-size: 15px;
-    }
-    section.scoreboard-area .start-and-stop-time-buttons {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      align-content: normal;
-      padding-top: 5px;
-    }
-    section.scoreboard-area .start-time {
-      max-width: 95px;
-      height: 35px;
-      margin-right: 5px;
-    }
-    section.scoreboard-area .stop-time {
-      max-width: 95px;
-      height: 35px;
-      margin-right: 5px;
-    }
-  }
 }
