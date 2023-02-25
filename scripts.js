@@ -11,7 +11,18 @@ let totalScoreBlue = 0;
 let totalScoreRed = 0;
 var interval;
 var audioBuzzer = document.getElementById("myAudio");
-let roundNumber = 1;
+var audioRumble = document.getElementById("myAudioRumble");
+let roundNumber = 1; // To get this to cycle through, I should make a for loop. for(let i = 1; i <= 3; i++) and create a timer function that includes the stop, start, and rounds functionality so that i loops through.
+
+// FUNCTIONS AUDIO SOUNDS
+
+function playAudio() {
+  audioBuzzer.play();
+}
+
+function playAudioRumble() {
+  audioRumble.play();
+}
 
 // MODAL FUNCTIONALITY
 btn.onclick = function () {
@@ -131,8 +142,35 @@ document
 
 // START AND STOP THE TIME AND COLORS
 
-function playAudio() {
-  audioBuzzer.play();
+function countdownBreak() {
+  clearInterval(interval);
+  interval = setInterval(function () {
+    var timer = $(".time-clock-break").html();
+    timer = timer.split(":");
+    var minutes = timer[0];
+    var seconds = timer[1];
+    seconds -= 1;
+    if (minutes < 0) return;
+    else if (seconds < 0 && minutes != 0) {
+      minutes -= 0;
+      seconds = 44;
+    } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
+
+    $(".time-clock-break").html(minutes + ":" + seconds);
+
+    if (minutes == 0 && seconds == 0) {
+      clearInterval(interval);
+      // document.querySelector("#timer").style.color = "#FF0000";
+      // playAudio();
+      roundNumber = roundNumber + 1;
+      document.querySelector(".round-number").textContent = roundNumber;
+      document.querySelector(".time-clock").textContent = "2:00";
+      document.querySelector("#timer").style.color = "#FFFFFF";
+    }
+    if (minutes == 0 && seconds == 10) {
+      playAudioRumble();
+    }
+  }, 1000);
 }
 
 function countdown() {
@@ -155,8 +193,7 @@ function countdown() {
       clearInterval(interval);
       document.querySelector("#timer").style.color = "#FF0000";
       playAudio();
-      roundNumber = roundNumber + 1;
-      document.querySelector(".round-number").textContent = roundNumber;
+      countdownBreak();
     }
   }, 1000);
 }

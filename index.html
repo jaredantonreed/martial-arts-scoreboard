@@ -21,6 +21,10 @@
   </head>
 
   <body>
+    <audio id="myAudioRumble">
+      <source src="./audio/lets-get-ready-to-rumble.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
     <audio id="myAudio">
       <source src="./audio/buzzer.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
@@ -29,90 +33,71 @@
       <div class="container">
         <!-- COUNTRY FLAGS & TIMER CLOCK -->
         <div class="row">
-          <div class="col-lg-6 current-country-flag-blue">
-            <img
-              src="./images/1200px-Flag_of_the_United_States.svg.png"
-              id="country-flag-blue-usa"
-              class="active"
-            />
-            <div class="current-name-blue">
-              <p class="blue-name">Blue</p>
+          <div class="col-6 current-country-flag-blue">
+            <div class="element-width-blue">
+              <img
+                src="./images/1200px-Flag_of_the_United_States.svg.png"
+                id="country-flag-blue-usa"
+                class="active"
+              />
+              <div class="current-name-blue">
+                <p class="blue-name">Blue</p>
+              </div>
             </div>
           </div>
-          <div class="col-lg-6 current-country-flag-red">
-            <img
-              src="./images/1200px-Flag_of_the_United_States.svg.png"
-              id="country-flag-red"
-            />
-            <div class="current-name-red">
-              <p class="red-name">Red</p>
+          <div class="col-6 current-country-flag-red">
+            <div class="element-width-red">
+              <img
+                src="./images/1200px-Flag_of_the_United_States.svg.png"
+                id="country-flag-red"
+              />
+              <div class="current-name-red">
+                <p class="red-name">Red</p>
+              </div>
             </div>
           </div>
         </div>
         <!-- AREA FOR POINTS TO BE ACCOUNTED TO -->
         <div class="row scores">
-          <div class="col-lg-5 current-score-blue">
+          <div class="col-5 current-score-blue">
             <p class="score-blue">0</p>
           </div>
-          <div class="col-lg-2 current-timer-and-rounds">
+          <div class="col-2 current-timer-and-rounds">
             <p class="timer time-clock" id="timer">2:00</p>
+            <p class="timer time-clock-break" id="timer-break">0:45</p>
             <p class="rounds">Round <span class="round-number">1</span></p>
           </div>
-          <div class="col-lg-5 current-score-red">
+          <div class="col-5 current-score-red">
             <p class="score-red">0</p>
           </div>
         </div>
         <!-- BUTTONS FOR BLUE & RED (BODY, HEAD, TECHNICAL AND SINGLE POINT REDUCTION) -->
         <div class="row">
-          <div class="col-lg-5 buttons-blue">
-            <!-- <div class="col-lg-2 body-regular-kick-blue">
-              <p>Body +2</p>
-            </div>
-            <div class="col-lg-2 body-turning-kick-blue">
-              <p>Body +4</p>
-            </div>
-            <div class="col-lg-2 head-regular-kick-blue">
-              <p>Head +3</p>
-            </div>
-            <div class="col-lg-2 head-turning-kick-blue">
-              <p>Head +5</p>
-            </div> -->
-            <div class="col-lg-2 technical-point-blue">
+          <div class="col-5 buttons-blue">
+            <div class="col-2 technical-point-blue">
               <p>+1&nbsp;<i class="fa-solid fa-arrow-up-long"></i></p>
             </div>
-            <div class="col-lg-2 penalty-blue">
+            <div class="col-2 penalty-blue">
               <p>-1&nbsp;<i class="fa-solid fa-arrow-down-long"></i></p>
             </div>
           </div>
-          <div class="col-lg-2 settings-icon">
+          <div class="col-2 settings-icon">
             <i class="fa-solid fa-gear" id="myBtn"></i>
           </div>
-          <div class="col-lg-5 buttons-red">
-            <!-- <div class="col-lg-2 body-regular-kick-red">
-              <p>Body +2</p>
-            </div>
-            <div class="col-lg-2 body-turning-kick-red">
-              <p>Body +4</p>
-            </div>
-            <div class="col-lg-2 head-regular-kick-red">
-              <p>Head +3</p>
-            </div>
-            <div class="col-lg-2 head-turning-kick-red">
-              <p>Head +5</p>
-            </div> -->
-            <div class="col-lg-2 technical-point-red">
+          <div class="col-5 buttons-red">
+            <div class="col-2 technical-point-red">
               <p>+1&nbsp;<i class="fa-solid fa-arrow-up-long"></i></p>
             </div>
-            <div class="col-lg-2 penalty-red">
+            <div class="col-2 penalty-red">
               <p>-1&nbsp;<i class="fa-solid fa-arrow-down-long"></i></p>
             </div>
           </div>
         </div>
         <div class="row start-and-stop-time-buttons">
-          <div class="col-lg-6 start-time" id="startTime">
+          <div class="col-6 start-time" id="startTime">
             <p class="start-timer">Start Time</p>
           </div>
-          <div class="col-lg-6 stop-time" id="stopTime">
+          <div class="col-6 stop-time" id="stopTime">
             <p class="stop-timer">Stop Time</p>
           </div>
         </div>
@@ -122,7 +107,7 @@
             <h1>Settings</h1>
             <br />
             <div class="row">
-              <div class="col-lg-12">
+              <div class="col-12">
                 <p id="adjust-time">Adjust The Time</p>
                 <p id="change-round-number">Change Round Number</p>
                 <p id="blue-name-input">Change Blue Name</p>
