@@ -95,36 +95,37 @@ document
 // START AND STOP THE TIME AND COLORS
 
 function countdownBreak() {
-  while (roundNumbers <= 3) {
-    clearInterval(interval);
-    interval = setInterval(function () {
-      var timer = $(".time-clock-break").html();
-      timer = timer.split(":");
-      var minutes = timer[0];
-      var seconds = timer[1];
-      seconds -= 1;
-      if (minutes < 0) return;
-      else if (seconds < 0 && minutes != 0) {
-        minutes -= 0;
-        seconds = 2;
-      } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
+  clearInterval(interval);
+  interval = setInterval(function () {
+    var timer = $(".time-clock-break").html();
+    timer = timer.split(":");
+    var minutes = timer[0];
+    var seconds = timer[1];
+    seconds -= 1;
+    if (minutes < 0) return;
+    else if (seconds < 0 && minutes != 0) {
+      minutes -= 0;
+      seconds = 2;
+    } else if (seconds < 10 && seconds.length != 2) seconds = "0" + seconds;
 
-      $(".time-clock-break").html(minutes + ":" + seconds);
+    $(".time-clock-break").html(minutes + ":" + seconds);
 
-      if (minutes == 0 && seconds == 0) {
-        clearInterval(interval);
+    if (minutes == 0 && seconds == 0) {
+      clearInterval(interval);
+
+      while (roundNumbers <= 3) {
         roundNumbers++;
-        console.log(roundNumbers);
-        document.querySelector(".round-number").textContent = roundNumbers;
-        document.querySelector(".time-clock").textContent = "0:03";
-        document.querySelector("#timer").style.color = "#FFFFFF";
+        break;
       }
-      if (minutes == 0 && seconds == 10) {
-        playAudioRumble();
-      }
-    }, 1000);
-    break;
-  }
+      console.log(roundNumbers);
+      document.querySelector(".round-number").textContent = roundNumbers;
+      document.querySelector(".time-clock").textContent = "0:03";
+      document.querySelector("#timer").style.color = "#FFFFFF";
+    }
+    if (minutes == 0 && seconds == 10) {
+      playAudioRumble();
+    }
+  }, 1000);
 }
 
 function countdown() {
@@ -139,7 +140,7 @@ function countdown() {
     else if (seconds < 0 && minutes != 0) {
       minutes -= 0;
       seconds = 3;
-    } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
+    } else if (seconds < 10 && seconds.length != 2) seconds = "0" + seconds;
 
     $(".time-clock").html(minutes + ":" + seconds);
 
