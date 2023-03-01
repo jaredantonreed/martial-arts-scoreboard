@@ -1,130 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Martial Arts Scoreboard</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
 
-  <body>
-    <audio id="myAudioRumble">
-      <source src="./audio/lets-get-ready-to-rumble.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-    <audio id="myAudio">
-      <source src="./audio/buzzer.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-    <section class="scoreboard-area">
-      <div class="container">
-        <!-- COUNTRY FLAGS & TIMER CLOCK -->
-        <div class="row">
-          <div class="col-6 current-country-flag-blue">
-            <img
-              src="./images/1200px-Flag_of_the_United_States.svg.png"
-              id="country-flag-blue-usa"
-              class="active"
-            />
-            <div class="current-name-blue">
-              <p class="blue-name">Blue</p>
-            </div>
-          </div>
-          <div class="col-6 current-country-flag-red">
-            <img
-              src="./images/1200px-Flag_of_the_United_States.svg.png"
-              id="country-flag-red"
-            />
-            <div class="current-name-red">
-              <p class="red-name">Red</p>
-            </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Martial Arts Scoreboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <audio id="myAudioRumble">
+    <source src="./audio/lets-get-ready-to-rumble.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="myAudio">
+    <source src="./audio/buzzer.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <section class="scoreboard-area">
+    <div class="container">
+      <!-- COUNTRY FLAGS & TIMER CLOCK -->
+      <div class="row">
+        <div class="col-6 current-country-flag-blue">
+          <img src="./images/1200px-Flag_of_the_United_States.svg.png" id="country-flag-blue-usa" class="active" />
+          <div class="current-name-blue">
+            <p class="blue-name">Blue</p>
           </div>
         </div>
-        <!-- AREA FOR POINTS TO BE ACCOUNTED TO -->
-        <div class="row scores">
-          <div class="col-5 current-score-blue">
-            <p class="score-blue">0</p>
-          </div>
-          <div class="col-2 current-timer-and-rounds">
-            <p class="timer time-clock" id="timer">2:00</p>
-            <p class="timer time-clock-break" id="timer-break">0:45</p>
-            <p class="rounds">Round <span class="round-number">1</span></p>
-          </div>
-          <div class="col-5 current-score-red">
-            <p class="score-red">0</p>
+        <div class="col-6 current-country-flag-red">
+          <img src="./images/1200px-Flag_of_the_United_States.svg.png" id="country-flag-red" />
+          <div class="current-name-red">
+            <p class="red-name">Red</p>
           </div>
         </div>
-        <!-- BUTTONS FOR BLUE & RED (BODY, HEAD, TECHNICAL AND SINGLE POINT REDUCTION) -->
-        <div class="row">
-          <div class="col-5 buttons-blue">
-            <div class="col-2 technical-point-blue">
-              <p>+1&nbsp;<i class="fa-solid fa-arrow-up-long"></i></p>
-            </div>
-            <div class="col-2 penalty-blue">
-              <p>-1&nbsp;<i class="fa-solid fa-arrow-down-long"></i></p>
-            </div>
+      </div>
+      <!-- AREA FOR POINTS TO BE ACCOUNTED TO -->
+      <div class="row scores">
+        <div class="col-5 current-score-blue">
+          <p class="score-blue">0</p>
+        </div>
+        <div class="col-2 current-timer-and-rounds">
+          <p class="timer time-clock" id="timer">0:03</p>
+          <p class="timer time-clock-break" id="timer-break">0:02</p>
+          <p class="rounds">Round <span class="round-number">1</span></p>
+        </div>
+        <div class="col-5 current-score-red">
+          <p class="score-red">0</p>
+        </div>
+      </div>
+      <!-- BUTTONS FOR BLUE & RED (BODY, HEAD, TECHNICAL AND SINGLE POINT REDUCTION) -->
+      <div class="row">
+        <div class="col-5 buttons-blue">
+          <div class="col-2 technical-point-blue">
+            <p>+1&nbsp;<i class="fa-solid fa-arrow-up-long"></i></p>
           </div>
-          <div class="col-2 settings-icon">
-            <i class="fa-solid fa-gear" id="myBtn"></i>
-          </div>
-          <div class="col-5 buttons-red">
-            <div class="col-2 technical-point-red">
-              <p>+1&nbsp;<i class="fa-solid fa-arrow-up-long"></i></p>
-            </div>
-            <div class="col-2 penalty-red">
-              <p>-1&nbsp;<i class="fa-solid fa-arrow-down-long"></i></p>
-            </div>
+          <div class="col-2 penalty-blue">
+            <p>-1&nbsp;<i class="fa-solid fa-arrow-down-long"></i></p>
           </div>
         </div>
-        <div class="row start-and-stop-time-buttons">
-          <div class="col-6 start-time" id="startTime">
-            <p class="start-timer">Start Time</p>
+        <div class="col-2 settings-icon">
+          <i class="fa-solid fa-gear" id="myBtn"></i>
+        </div>
+        <div class="col-5 buttons-red">
+          <div class="col-2 technical-point-red">
+            <p>+1&nbsp;<i class="fa-solid fa-arrow-up-long"></i></p>
           </div>
-          <div class="col-6 stop-time" id="stopTime">
-            <p class="stop-timer">Stop Time</p>
+          <div class="col-2 penalty-red">
+            <p>-1&nbsp;<i class="fa-solid fa-arrow-down-long"></i></p>
           </div>
         </div>
-        <div class="row">
-          <div id="myModal" class="modal">
-            <button class="close">&times;</button>
-            <h1>Settings</h1>
-            <br />
-            <div class="row">
-              <div class="col-12">
-                <p id="adjust-time">Adjust The Time</p>
-                <p id="change-round-number">Change Round Number</p>
-                <p id="blue-name-input">Change Blue Name</p>
-                <p id="red-name-input">Change Red Name</p>
-                <p id="reset-system">Reset System</p>
-              </div>
+      </div>
+      <div class="row start-and-stop-time-buttons">
+        <div class="col-6 start-time" id="startTime">
+          <p class="start-timer">Start Time</p>
+        </div>
+        <div class="col-6 stop-time" id="stopTime">
+          <p class="stop-timer">Stop Time</p>
+        </div>
+      </div>
+      <div class="row">
+        <div id="myModal" class="modal">
+          <button class="close">&times;</button>
+          <h1>Settings</h1>
+          <br />
+          <div class="row">
+            <div class="col-12">
+              <p id="adjust-time">Adjust The Time</p>
+              <p id="change-round-number">Change Round Number</p>
+              <p id="blue-name-input">Change Blue Name</p>
+              <p id="red-name-input">Change Red Name</p>
+              <p id="reset-system">Reset System</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.js"
-      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <script src="scripts.js"></script>
-  </body>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+</body>
+
 </html>

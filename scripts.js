@@ -9,10 +9,10 @@ let stopBtn = document.querySelector("#stopTime");
 let startBtn = document.querySelector("#startTime");
 let totalScoreBlue = 0;
 let totalScoreRed = 0;
-var interval;
+let interval;
 var audioBuzzer = document.getElementById("myAudio");
 var audioRumble = document.getElementById("myAudioRumble");
-let roundNumber = 1; // To get this to cycle through, I should make a for loop. for(let i = 1; i <= 3; i++) and create a timer function that includes the stop, start, and rounds functionality so that i loops through.
+let roundNumbers = 1; // To get this to cycle through, I should make a for loop. for(let i = 1; i <= 3; i++) and create a timer function that includes the stop, start, and rounds functionality so that i loops through.
 
 // FUNCTIONS AUDIO SOUNDS
 
@@ -46,30 +46,6 @@ document.addEventListener("keydown", function (event) {
 // SCOREBOARD FUNCTIONALITY
 // BLUE SCORE
 document.querySelector(".score-blue").textContent = totalScoreBlue;
-// document
-//   .querySelector(".body-regular-kick-blue")
-//   .addEventListener("click", function () {
-//     totalScoreBlue = totalScoreBlue + 2;
-//     document.querySelector(".score-blue").textContent = totalScoreBlue;
-//   });
-// document
-//   .querySelector(".body-turning-kick-blue")
-//   .addEventListener("click", function () {
-//     totalScoreBlue = totalScoreBlue + 4;
-//     document.querySelector(".score-blue").textContent = totalScoreBlue;
-//   });
-// document
-//   .querySelector(".head-regular-kick-blue")
-//   .addEventListener("click", function () {
-//     totalScoreBlue = totalScoreBlue + 3;
-//     document.querySelector(".score-blue").textContent = totalScoreBlue;
-//   });
-// document
-//   .querySelector(".head-turning-kick-blue")
-//   .addEventListener("click", function () {
-//     totalScoreBlue = totalScoreBlue + 5;
-//     document.querySelector(".score-blue").textContent = totalScoreBlue;
-//   });
 document
   .querySelector(".technical-point-blue")
   .addEventListener("click", function () {
@@ -83,30 +59,6 @@ document.querySelector(".penalty-blue").addEventListener("click", function () {
 
 // RED SCORE
 document.querySelector(".score-red").textContent = totalScoreRed;
-// document
-//   .querySelector(".body-regular-kick-red")
-//   .addEventListener("click", function () {
-//     totalScoreRed = totalScoreRed + 2;
-//     document.querySelector(".score-red").textContent = totalScoreRed;
-//   });
-// document
-//   .querySelector(".body-turning-kick-red")
-//   .addEventListener("click", function () {
-//     totalScoreRed = totalScoreRed + 4;
-//     document.querySelector(".score-red").textContent = totalScoreRed;
-//   });
-// document
-//   .querySelector(".head-regular-kick-red")
-//   .addEventListener("click", function () {
-//     totalScoreRed = totalScoreRed + 3;
-//     document.querySelector(".score-red").textContent = totalScoreRed;
-//   });
-// document
-//   .querySelector(".head-turning-kick-red")
-//   .addEventListener("click", function () {
-//     totalScoreRed = totalScoreRed + 5;
-//     document.querySelector(".score-red").textContent = totalScoreRed;
-//   });
 document
   .querySelector(".technical-point-red")
   .addEventListener("click", function () {
@@ -143,34 +95,36 @@ document
 // START AND STOP THE TIME AND COLORS
 
 function countdownBreak() {
-  clearInterval(interval);
-  interval = setInterval(function () {
-    var timer = $(".time-clock-break").html();
-    timer = timer.split(":");
-    var minutes = timer[0];
-    var seconds = timer[1];
-    seconds -= 1;
-    if (minutes < 0) return;
-    else if (seconds < 0 && minutes != 0) {
-      minutes -= 0;
-      seconds = 44;
-    } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
+  while (roundNumbers <= 3) {
+    clearInterval(interval);
+    interval = setInterval(function () {
+      var timer = $(".time-clock-break").html();
+      timer = timer.split(":");
+      var minutes = timer[0];
+      var seconds = timer[1];
+      seconds -= 1;
+      if (minutes < 0) return;
+      else if (seconds < 0 && minutes != 0) {
+        minutes -= 0;
+        seconds = 2;
+      } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
 
-    $(".time-clock-break").html(minutes + ":" + seconds);
+      $(".time-clock-break").html(minutes + ":" + seconds);
 
-    if (minutes == 0 && seconds == 0) {
-      clearInterval(interval);
-      // document.querySelector("#timer").style.color = "#FF0000";
-      // playAudio();
-      roundNumber = roundNumber + 1;
-      document.querySelector(".round-number").textContent = roundNumber;
-      document.querySelector(".time-clock").textContent = "2:00";
-      document.querySelector("#timer").style.color = "#FFFFFF";
-    }
-    if (minutes == 0 && seconds == 10) {
-      playAudioRumble();
-    }
-  }, 1000);
+      if (minutes == 0 && seconds == 0) {
+        clearInterval(interval);
+        roundNumbers++;
+        console.log(roundNumbers);
+        document.querySelector(".round-number").textContent = roundNumbers;
+        document.querySelector(".time-clock").textContent = "0:03";
+        document.querySelector("#timer").style.color = "#FFFFFF";
+      }
+      if (minutes == 0 && seconds == 10) {
+        playAudioRumble();
+      }
+    }, 1000);
+    break;
+  }
 }
 
 function countdown() {
@@ -183,8 +137,8 @@ function countdown() {
     seconds -= 1;
     if (minutes < 0) return;
     else if (seconds < 0 && minutes != 0) {
-      minutes -= 1;
-      seconds = 59;
+      minutes -= 0;
+      seconds = 3;
     } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
 
     $(".time-clock").html(minutes + ":" + seconds);
