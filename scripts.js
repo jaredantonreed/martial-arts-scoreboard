@@ -16,7 +16,7 @@ var timerBreak;
 var timerStart;
 var minutes;
 var seconds;
-let roundNumbers = 1;
+let roundNumbers = [2, 3];
 
 // FUNCTIONS
 
@@ -95,6 +95,7 @@ function countdownBreak() {
     $(".time-clock-break").html(minutes + ":" + seconds);
     if (minutes == 0 && seconds == 0) {
       clearInterval(interval);
+      roundNumberChange();
       document.querySelector(".time-clock").textContent = "0:03";
       document.querySelector("#timer").style.color = "#FFFFFF";
     }
@@ -151,8 +152,12 @@ buttonStartTimer();
 
 // Change round numbers
 function roundNumberChange() {
-  roundNumbers++;
-  document.querySelector(".round-number").textContent = roundNumbers;
+  for (let i = 0; i <= roundNumbers.length; i++) {
+    roundNumbers[i];
+    console.log(roundNumbers);
+    document.querySelector(".round-number").textContent = roundNumbers[i];
+    break;
+  }
 }
 
 // Change rounds in the modal
