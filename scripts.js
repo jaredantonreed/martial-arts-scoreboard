@@ -16,7 +16,7 @@ var timerBreak;
 var timerStart;
 var minutes;
 var seconds;
-let roundNumbers = [2, 3];
+let roundNumbers = [1, 2, 3];
 
 // FUNCTIONS
 
@@ -97,6 +97,7 @@ function countdownBreak() {
       clearInterval(interval);
       roundNumberChange();
       document.querySelector(".time-clock").textContent = "0:03";
+      document.querySelector("#timer-break").textContent = "0:02";
       document.querySelector("#timer").style.color = "#FFFFFF";
     }
     if (minutes == 0 && seconds == 10) {
@@ -152,11 +153,14 @@ buttonStartTimer();
 
 // Change round numbers
 function roundNumberChange() {
-  for (let i = 0; i <= roundNumbers.length; i++) {
-    roundNumbers[i];
+  for (let i = 0; i <= 3; i++) {
+    roundNumbers[i]++;
     console.log(roundNumbers);
     document.querySelector(".round-number").textContent = roundNumbers[i];
     break;
+  }
+  if ((roundNumbers = [2])) {
+    return;
   }
 }
 
