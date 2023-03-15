@@ -49,7 +49,7 @@ function startTimer() {
           } else {
             clearInterval(interval);
             init();
-            startTimer();
+            // startTimer();
           }
         }, 1000);
       }
