@@ -1,3 +1,5 @@
+"use strict";
+
 // Set default timer values
 let time = 0;
 let restTime = 0;
@@ -25,7 +27,7 @@ function init() {
   rounds = roundsInput.value;
   timeDisplay.innerHTML = formatTime(time);
   restDisplay.innerHTML = formatTime(restTime);
-  roundsDisplay.innerHTML = `${currentRound}/${rounds}`;
+  roundsDisplay.innerHTML = `${currentRound}`;
 }
 
 // Start the timer
@@ -39,7 +41,7 @@ function startTimer() {
       if (currentRound < rounds) {
         restDisplay.innerHTML = formatTime(restTime);
         currentRound++;
-        roundsDisplay.innerHTML = `${currentRound}/${rounds}`;
+        roundsDisplay.innerHTML = `${currentRound}`;
         interval = setInterval(() => {
           if (restTime > 0) {
             restTime--;
