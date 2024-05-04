@@ -1,60 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Scoreboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="scoreboard">
+    <audio id="buzzer" src="buzzer.mp3"></audio>
+    <div class="center-container">
+      <div class="container">
+        <div class="row">
+          <!-- Red Score Section -->
+          <div class="col-lg-4 score-section red-score text-center">
+            <p id="red-score">0</p>
+            <div class="score-buttons">
+              <button id="red-plus">+1</button>
+              <button id="red-minus">-1</button>
+            </div>
+          </div>
 
-<head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="main.css" />
-  <title>Timer App</title>
-</head>
+          <!-- Timer and Round Number -->
+          <div class="col-lg-4 text-center">
+            <p id="timer">0:00</p>
+            <p id="round-number">Round 1</p>
+            <div class="other-buttons">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#settingsModal"
+                id="settings"
+              >
+                Settings
+              </button>
+              <button id="start-stop-button">Start</button>
+              <button id="start-goalie-timer">Start Goalie Timer</button>
+            </div>
+            <p id="goalie-timer" style="display: none;">0:30</p>
+          </div>
 
-<body>
-  <h1>Timer App</h1>
-  <div id="timer">
-    <div id="timeDisplay">00:00</div>
-    <div id="restDisplay">00:00</div>
-    <div id="roundsDisplay">0</div>
-  </div>
-  <button id="startBtn">Start</button>
-  <button id="stopBtn">Stop</button>
-  <button id="resetBtn">Reset</button>
-  <p class="score-blue">0</p>
-  <p class="score-red">0</p>
-  <div class="col-2 plus-point-blue">
-    <button>+1&nbsp;<i class="fa-solid fa-arrow-up-long"></i></button>
-  </div>
-  <div class="col-2 minus-point-blue">
-    <button>-1&nbsp;<i class="fa-solid fa-arrow-down-long"></i></button>
-  </div>
-  <div class="col-2 plus-point-red">
-    <button>+1&nbsp;<i class="fa-solid fa-arrow-up-long"></i></button>
-  </div>
-  <div class="col-2 minus-point-red">
-    <button>-1&nbsp;<i class="fa-solid fa-arrow-down-long"></i></button>
-  </div>
-  <label for="durationInput">Duration (in seconds):</label>
-  <input type="number" id="durationInput" /><br>
-  <label for="restInput">Rest period (in seconds):</label>
-  <input type="number" id="restInput" /><br>
-  <label for="roundsInput">Number of rounds:</label>
-  <input type="number" id="roundsInput" />
-  <br>
-  <br>
-  <br>
-  <br>
-  <h6>What else I need to do:</h6>
-  <ul>
-    <li>Add reset-all button to reset entire scoreboard. This reset button will bring up the setup modal again ready for
-      the
-      next match.</li>
-    <li>Use the "Reset" button at top (currently) and add it to the bottom of the eventual setup modal to exit the modal
-      and bring up the scoreboard.</li>
-    <li>Add a section that pops up when that specifc person wins the match based on whoever has the most points tallied.
-    </li>
-  </ul>
+          <!-- Blue Score Section -->
+          <div class="col-lg-4 score-section blue-score text-center">
+            <p id="blue-score">0</p>
+            <div class="score-buttons">
+              <button id="blue-plus">+1</button>
+              <button id="blue-minus">-1</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div
+      class="modal fade"
+      id="settingsModal"
+      tabindex="-1"
+      aria-labelledby="settingsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="settingsModalLabel">Timer Settings</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <label for="minutes">Minutes:</label>
+            <input type="number" id="minutes" min="0" value="0" />
+            <label for="seconds">Seconds:</label>
+            <input type="number" id="seconds" min="0" max="59" value="0" />
+            <br />
+            <br />
+            <label for="rounds">Number of Rounds:</label>
+            <input type="number" id="rounds" min="1" value="1" />
+            <br />
+            <br />
+            <label for="break-time">Break Time (seconds):</label>
+            <input type="number" id="break-time" min="0" value="30" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="set-timer">
+              Set Timer
+            </button>
+            <button
+              type="button
+                    "
+              class="btn btn-danger"
+              id="reset-everything"
+            >
+              Reset Everything
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+  crossorigin="anonymous"
+></script>
+<script src="script.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script type="text/javascript" src="scripts.js"></script>
-
 </html>

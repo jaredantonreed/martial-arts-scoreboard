@@ -1,0 +1,201 @@
+html {
+    touch-action: manipulation !important;
+  }
+  
+  #scoreboard {
+    padding: 25px;
+    background-color: rgb(14, 14, 14);
+    padding: 0;
+  }
+  
+  button {
+    margin: 5px; /* Adds a little space around buttons */
+    border-radius: 3px;
+  }
+  
+  .red-score {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(96, 1, 1, 1) 0%,
+      rgba(222, 5, 5, 1) 100%
+    );
+    border-radius: 3px;
+  }
+  
+  .blue-score {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 0%,
+      rgba(0, 9, 255, 1) 100%
+    );
+    border-radius: 3px;
+  }
+  
+  p#red-score {
+    color: #fff;
+    font-size: 280px;
+    font-weight: 700;
+  }
+  
+  p#blue-score {
+    color: #fff;
+    font-size: 280px;
+    font-weight: 700;
+  }
+  
+  p#timer {
+    font-size: 120px;
+    color: #fff;
+  }
+  
+  p#round-number {
+    font-size: 50px;
+    color: #fff;
+  }
+  
+  button#start-stop-button {
+    background-color: #138522;
+    color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border: 1px solid #fff;
+  }
+  
+  button#settings {
+    background-color: #aaaaaa;
+    color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border: 1px solid #fff;
+  }
+  
+  button#blue-plus {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 0%,
+      rgba(0, 9, 255, 1) 100%
+    );
+    color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    border: 1px solid #fff;
+    font-size: 24px;
+  }
+  
+  button#blue-minus {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 0%,
+      rgba(0, 9, 255, 1) 100%
+    );
+    color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    border: 1px solid #fff;
+    font-size: 24px;
+  }
+  
+  button#red-plus {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(96, 1, 1, 1) 0%,
+      rgba(222, 5, 5, 1) 100%
+    );
+    color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    border: 1px solid #fff;
+    font-size: 24px;
+  }
+  
+  button#red-minus {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(96, 1, 1, 1) 0%,
+      rgba(222, 5, 5, 1) 100%
+    );
+    color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    border: 1px solid #fff;
+    font-size: 24px;
+  }
+
+  button#start-goalie-timer {
+    background: rgb(2, 0, 36);
+    background: #E4A11B;
+    color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    border: 1px solid #fff;
+    font-size: 24px;
+  }
+  
+  .buttons {
+    margin-top: 15px;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(14, 14, 14);
+  }
+  
+  .score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .score-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; /* Adjust as needed */
+  }
+
+  .timer-warning {
+    color: red;
+  }
+
+  #goalie-timer {
+    font-size: 150px;
+    color: white;
+    text-align: center;
+  }
+  
+  
+  
